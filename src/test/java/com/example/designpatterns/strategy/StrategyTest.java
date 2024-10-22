@@ -1,9 +1,7 @@
 package test.java.com.example.designpatterns.strategy;
 
-import main.java.com.example.designpatterns.strategy.duck.DecoyDuck;
-import main.java.com.example.designpatterns.strategy.duck.MallardDuck;
-import main.java.com.example.designpatterns.strategy.duck.RedheadDuck;
-import main.java.com.example.designpatterns.strategy.duck.RubberDuck;
+import main.java.com.example.designpatterns.strategy.duck.*;
+import main.java.com.example.designpatterns.strategy.fly.FlyRocketPowered;
 import org.junit.jupiter.api.Test;
 
 public class StrategyTest {
@@ -45,5 +43,14 @@ public class StrategyTest {
         duck.performQuack();
         duck.display();
         duck.swim();
+    }
+
+    @Test
+    void createModelDuck() {
+        final var duck = new ModelDuck();
+
+        duck.performFly();
+        duck.setFlyBehavior(new FlyRocketPowered());
+        duck.performFly();
     }
 }

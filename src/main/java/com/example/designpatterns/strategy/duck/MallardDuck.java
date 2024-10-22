@@ -6,7 +6,8 @@ import main.java.com.example.designpatterns.strategy.quack.Quack;
 public class MallardDuck extends Duck {
 
     public MallardDuck() {
-        super(new FlyWithWings(), new Quack());
+        flyBehavior = new FlyWithWings();
+        quackBehavior = new Quack();
     }
 
     public void display() {

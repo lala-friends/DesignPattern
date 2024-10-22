@@ -5,7 +5,8 @@ import main.java.com.example.designpatterns.strategy.quack.Quack;
 
 public class RedheadDuck extends Duck {
     public RedheadDuck() {
-        super(new FlyWithWings(), new Quack());
+        flyBehavior = new FlyWithWings();
+        quackBehavior = new Quack();
     }
 
     @Override

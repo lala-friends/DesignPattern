@@ -4,12 +4,10 @@ import main.java.com.example.designpatterns.strategy.fly.FlyBehavior;
 import main.java.com.example.designpatterns.strategy.quack.QuackBehavior;
 
 public abstract class Duck {
-    private final FlyBehavior flyBehavior;
-    private final QuackBehavior quackBehavior;
+    protected FlyBehavior flyBehavior;
+    protected QuackBehavior quackBehavior;
 
-    public Duck(final FlyBehavior flyBehavior, final QuackBehavior quackBehavior) {
-        this.flyBehavior = flyBehavior;
-        this.quackBehavior = quackBehavior;
+    public Duck() {
     }
 
     public abstract void display();

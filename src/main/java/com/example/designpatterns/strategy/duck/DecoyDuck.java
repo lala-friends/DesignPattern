@@ -4,9 +4,9 @@ import main.java.com.example.designpatterns.strategy.fly.FlyNoway;
 import main.java.com.example.designpatterns.strategy.quack.MuteQuack;
 
 public class DecoyDuck extends Duck {
-
     public DecoyDuck() {
-        super(new FlyNoway(), new MuteQuack());
+        flyBehavior = new FlyNoway();
+        quackBehavior = new MuteQuack();
     }
 
     @Override

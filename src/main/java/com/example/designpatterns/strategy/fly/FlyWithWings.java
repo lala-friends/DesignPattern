@@ -3,6 +3,6 @@ package main.java.com.example.designpatterns.strategy.fly;
 public class FlyWithWings implements FlyBehavior {
     @Override
     public void fly() {
-        System.out.println("I'm flying with wings");
+        System.out.println("날고 있어요!");
     }
 }

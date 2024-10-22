@@ -5,7 +5,8 @@ import main.java.com.example.designpatterns.strategy.quack.Squeak;
 
 public class RubberDuck extends Duck {
     public RubberDuck() {
-        super(new FlyNoway(), new Squeak());
+        flyBehavior = new FlyNoway();
+        quackBehavior = new Squeak();
     }
 
     @Override

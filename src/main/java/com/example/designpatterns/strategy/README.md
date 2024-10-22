@@ -2,11 +2,11 @@
 
 ## 오리 시뮬레이션 게임, SimUduck
 
-![원래 디자인](./images/1.png)
+<p align="center"><img width="700" alt="fly" src="./images/1.png">
 
 ## 날아다니는 기능을 추가 - 상속
 
-![원래 디자인](./images/2.png)
+<p align="center"><img width="700" alt="fly" src="./images/2.png">
 
 * 문제 발생: 고무 오리 인형이 날아다님
 * 해결: 오버라이드로 해결
@@ -18,7 +18,7 @@
 
 ## 그렇다면, 인터페이스는?
 
-![원래 디자인](./images/3.png)
+<p align="center"><img width="1000" alt="fly" src="./images/3.png">
 
 * Flyable, Quackable 인터페이스 추가
     * 해당 기능이 있는 오리(Duck의 구상클래스)에게만 추가 가능
@@ -48,14 +48,14 @@
 
 ## Duck의 행동 구현하기
 
-![원래 디자인](./images/4.png)
+<p align="center"><img width="1000" alt="fly" src="./images/4.png">
 
 * 행동 재사용 가능
 * 기존의 행동 클래스나 행동을 사용하는 클래스를 건드리지 않고도 새로운 행동 추가 가능
 
 ## Duck의 행동 통합하기
 
-![원래 디자인](./images/5.png)
+<p align="center"><img width="300" alt="fly" src="./images/5.png">
 
 ```java
 public abstract class Duck {
@@ -156,7 +156,7 @@ public class StrategyTest {
 
 ## 캡슐화된 행동을 큰 그림으로 바라보기
 
-![원래 디자인](./images/6.png)
+<p align="center"><img width="700" alt="fly" src="./images/6.png">
 
 * 클래스 사이의 관계
     * A는 B이다. - 상속

@@ -7,7 +7,7 @@ import main.java.com.example.designpatterns.observer.push.observer.StatisticDisp
 import main.java.com.example.designpatterns.observer.push.subject.WeatherData;
 import org.junit.jupiter.api.Test;
 
-public class ObserverTest {
+public class ObserverPushTest {
     @Test
     public void changeMeasurements() {
         final var subject = new WeatherData();

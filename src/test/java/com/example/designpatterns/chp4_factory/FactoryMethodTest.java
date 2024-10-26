@@ -4,7 +4,7 @@ import main.java.com.example.designpatterns.chp4_factory.factory_method.ChicagoP
 import main.java.com.example.designpatterns.chp4_factory.factory_method.NyPizzaStore;
 import org.junit.jupiter.api.Test;
 
-public class FactoryTest {
+public class FactoryMethodTest {
     @Test
     public void testFactoryMethod() {
         final var nyStore = new NyPizzaStore();

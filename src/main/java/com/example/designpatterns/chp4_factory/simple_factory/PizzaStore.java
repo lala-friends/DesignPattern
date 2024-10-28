@@ -5,7 +5,7 @@ import main.java.com.example.designpatterns.chp4_factory.simple_factory.pizza.Pi
 public class PizzaStore {
     private final SimplePizzaFactory simplePizzaFactory;
 
-    public PizzaStore(SimplePizzaFactory simplePizzaFactory) {
+    public PizzaStore(final SimplePizzaFactory simplePizzaFactory) {
         this.simplePizzaFactory = simplePizzaFactory;
     }
 

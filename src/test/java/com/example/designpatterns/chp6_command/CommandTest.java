@@ -114,4 +114,80 @@ public class CommandTest {
         System.out.println(remoteControl);
         remoteControl.undoButtonWasPressed();
     }
+
+    @Test
+    void testMacroCommand() {
+        final var remoteControl = new RemoteControl();
+
+        final var lightForLivingRoom = new Light("Living Room");
+        final var lightOnCommandForLivingRoom = new LightOnCommand(lightForLivingRoom);
+        final var lightOffCommandForLivingRoom = new LightOffCommand(lightForLivingRoom);
+
+        final var lightForKitchen = new Light("Kitchen");
+        final var lightOnCommandForKitchen = new LightOnCommand(lightForKitchen);
+        final var lightOffCommandForKitchen = new LightOffCommand(lightForKitchen);
+
+        final var ceilingFan = new CeilingFan("Living Room");
+        final var ceilingFanHighCommand = new CeilingFanHighCommand(ceilingFan);
+        final var ceilingFanOffCommand = new CeilingFanOffCommand(ceilingFan);
+
+        final var garageDoor = new GarageDoor();
+        final var garageOnCommand = new GarageDoorOpenCommand(garageDoor);
+        final var garageCloseCommand = new GarageDoorCloseCommand(garageDoor);
+
+        final var stereo = new Stereo("Living Room");
+        final var stereoOnForCDCommand = new StereoOnForCDCommand(stereo);
+        final var stereoOffCommand = new StereoOffCommand(stereo);
+
+        final Command[] partyOn = {lightOnCommandForLivingRoom, lightOnCommandForKitchen, ceilingFanHighCommand, garageOnCommand, stereoOnForCDCommand};
+        final Command[] partyOff = {lightOffCommandForLivingRoom, lightOffCommandForKitchen, ceilingFanOffCommand, garageCloseCommand, stereoOffCommand};
+        final var partyOnMacro = new MacroCommand(partyOn);
+        final var partyOffMacro = new MacroCommand(partyOff);
+
+        remoteControl.setCommand(0, partyOnMacro, partyOffMacro);
+
+        remoteControl.onButtonWasPressed(0);
+        remoteControl.offButtonWasPressed(0);
+    }
+
+    @Test
+    void testMacroCommand_undo() {
+        final var remoteControl = new RemoteControl();
+
+        final var lightForLivingRoom = new Light("Living Room");
+        final var lightOnCommandForLivingRoom = new LightOnCommand(lightForLivingRoom);
+        final var lightOffCommandForLivingRoom = new LightOffCommand(lightForLivingRoom);
+
+        final var lightForKitchen = new Light("Kitchen");
+        final var lightOnCommandForKitchen = new LightOnCommand(lightForKitchen);
+        final var lightOffCommandForKitchen = new LightOffCommand(lightForKitchen);
+
+        final var ceilingFan = new CeilingFan("Living Room");
+        final var ceilingFanHighCommand = new CeilingFanHighCommand(ceilingFan);
+        final var ceilingFanOffCommand = new CeilingFanOffCommand(ceilingFan);
+
+        final var garageDoor = new GarageDoor();
+        final var garageOnCommand = new GarageDoorOpenCommand(garageDoor);
+        final var garageCloseCommand = new GarageDoorCloseCommand(garageDoor);
+
+        final var stereo = new Stereo("Living Room");
+        final var stereoOnForCDCommand = new StereoOnForCDCommand(stereo);
+        final var stereoOffCommand = new StereoOffCommand(stereo);
+
+        final Command[] partyOn = {lightOnCommandForLivingRoom, lightOnCommandForKitchen, ceilingFanHighCommand, garageOnCommand, stereoOnForCDCommand};
+        final Command[] partyOff = {lightOffCommandForLivingRoom, lightOffCommandForKitchen, ceilingFanOffCommand, garageCloseCommand, stereoOffCommand};
+        final var partyOnMacro = new MacroCommand(partyOn);
+        final var partyOffMacro = new MacroCommand(partyOff);
+
+        remoteControl.setCommand(0, partyOnMacro, partyOffMacro);
+
+        remoteControl.onButtonWasPressed(0);
+        remoteControl.undoButtonWasPressed();
+
+        System.out.println(remoteControl);
+
+        remoteControl.onButtonWasPressed(0);
+        remoteControl.offButtonWasPressed(0);
+        remoteControl.undoButtonWasPressed();
+    }
 }

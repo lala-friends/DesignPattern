@@ -55,7 +55,7 @@ public class RemoteControl {
         return stringBuilder.toString();
     }
 
-    public void setUndoCommand(Command undoCommand) {
+    private void setUndoCommand(Command undoCommand) {
         this.undoCommand = undoCommand;
     }
 }

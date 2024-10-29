@@ -2,18 +2,18 @@ package main.java.com.example.designpatterns.chp6_command.command;
 
 import main.java.com.example.designpatterns.chp6_command.home_appliances.CeilingFan;
 
-public class CeilingFanOffCommand implements Command {
+public class CeilingFanLowCommand implements Command {
     private final CeilingFan ceilingFan;
     private int previousSpeed;
 
-    public CeilingFanOffCommand(final CeilingFan ceilingFan) {
+    public CeilingFanLowCommand(final CeilingFan ceilingFan) {
         this.ceilingFan = ceilingFan;
     }
 
     @Override
     public void execute() {
         previousSpeed = ceilingFan.getSpeed();
-        ceilingFan.off();
+        ceilingFan.low();
     }
 
     @Override

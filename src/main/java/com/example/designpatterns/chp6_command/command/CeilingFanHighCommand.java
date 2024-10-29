@@ -4,6 +4,7 @@ import main.java.com.example.designpatterns.chp6_command.home_appliances.Ceiling
 
 public class CeilingFanHighCommand implements Command {
     private final CeilingFan ceilingFan;
+    private int previousSpeed;
 
     public CeilingFanHighCommand(final CeilingFan ceilingFan) {
         this.ceilingFan = ceilingFan;
@@ -11,11 +12,17 @@ public class CeilingFanHighCommand implements Command {
 
     @Override
     public void execute() {
+        previousSpeed = ceilingFan.getSpeed();
         ceilingFan.high();
     }
 
     @Override
     public void undo() {
-        ceilingFan.off();
+        switch (previousSpeed) {
+            case CeilingFan.HIGH -> ceilingFan.high();
+            case CeilingFan.MEDIUM -> ceilingFan.medium();
+            case CeilingFan.LOW -> ceilingFan.low();
+            case CeilingFan.OFF -> ceilingFan.off();
+        }
     }
 }

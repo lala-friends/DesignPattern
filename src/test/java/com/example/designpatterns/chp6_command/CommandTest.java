@@ -91,4 +91,27 @@ public class CommandTest {
         System.out.println(remoteControl);
         remoteControl.undoButtonWasPressed();
     }
+
+    @Test
+    void testCeilingFanSpeed() {
+        final var remoteControl = new RemoteControl();
+        final var ceilingFan = new CeilingFan("Living Room");
+        final var ceilingFanHighCommand = new CeilingFanHighCommand(ceilingFan);
+        final var ceilingFanMediumCommand = new CeilingFanMediumCommand(ceilingFan);
+        final var ceilingFanLowCommand = new CeilingFanLowCommand(ceilingFan);
+        final var ceilingFanOffCommand = new CeilingFanOffCommand(ceilingFan);
+
+        remoteControl.setCommand(0, ceilingFanLowCommand, ceilingFanOffCommand);
+        remoteControl.setCommand(1, ceilingFanMediumCommand, ceilingFanOffCommand);
+        remoteControl.setCommand(2, ceilingFanHighCommand, ceilingFanOffCommand);
+
+        remoteControl.onButtonWasPressed(1);
+        remoteControl.offButtonWasPressed(1);
+        System.out.println(remoteControl);
+        remoteControl.undoButtonWasPressed();
+
+        remoteControl.onButtonWasPressed(2);
+        System.out.println(remoteControl);
+        remoteControl.undoButtonWasPressed();
+    }
 }

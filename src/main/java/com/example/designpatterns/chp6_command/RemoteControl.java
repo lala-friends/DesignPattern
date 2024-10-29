@@ -6,6 +6,7 @@ import main.java.com.example.designpatterns.chp6_command.command.NoCommand;
 public class RemoteControl {
     private final Command[] onCommands;
     private final Command[] offCommands;
+    private Command undoCommand;
 
     public RemoteControl() {
         onCommands = new Command[7];
@@ -15,6 +16,8 @@ public class RemoteControl {
             onCommands[i] = new NoCommand();
             offCommands[i] = new NoCommand();
         }
+
+        undoCommand = new NoCommand();
     }
 
     public void setCommand(final int index, final Command onCommand, final Command offCommand) {
@@ -24,10 +27,16 @@ public class RemoteControl {
 
     public void onButtonWasPressed(int slot) {
         onCommands[slot].execute();
+        setUndoCommand(onCommands[slot]);
     }
 
     public void offButtonWasPressed(int slot) {
         offCommands[slot].execute();
+        setUndoCommand(offCommands[slot]);
+    }
+
+    public void undoButtonWasPressed() {
+        undoCommand.undo();
     }
 
     @Override
@@ -44,5 +53,9 @@ public class RemoteControl {
         }
 
         return stringBuilder.toString();
+    }
+
+    public void setUndoCommand(Command undoCommand) {
+        this.undoCommand = undoCommand;
     }
 }

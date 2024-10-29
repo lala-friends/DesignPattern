@@ -70,4 +70,25 @@ public class CommandTest {
         remoteControl.onButtonWasPressed(4);
         remoteControl.offButtonWasPressed(4);
     }
+
+    @Test
+    void testRemoteControl_undo() {
+        final var remoteControl = new RemoteControl();
+
+        final var lightForLivingRoom = new Light("Living Room");
+        final var lightOnCommandForLivingRoom = new LightOnCommand(lightForLivingRoom);
+        final var lightOffCommandForLivingRoom = new LightOffCommand(lightForLivingRoom);
+
+        remoteControl.setCommand(0, lightOnCommandForLivingRoom, lightOffCommandForLivingRoom);
+
+        remoteControl.onButtonWasPressed(0);
+        remoteControl.offButtonWasPressed(0);
+        System.out.println(remoteControl);
+        remoteControl.undoButtonWasPressed();
+
+        remoteControl.offButtonWasPressed(0);
+        remoteControl.onButtonWasPressed(0);
+        System.out.println(remoteControl);
+        remoteControl.undoButtonWasPressed();
+    }
 }

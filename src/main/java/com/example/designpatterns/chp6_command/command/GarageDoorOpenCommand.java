@@ -1,4 +1,6 @@
-package main.java.com.example.designpatterns.chp6_command;
+package main.java.com.example.designpatterns.chp6_command.command;
+
+import main.java.com.example.designpatterns.chp6_command.home_appliances.GarageDoor;
 
 public class GarageDoorOpenCommand implements Command {
     private final GarageDoor garageDoor;

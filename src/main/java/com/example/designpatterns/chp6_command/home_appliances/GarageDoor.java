@@ -1,4 +1,4 @@
-package main.java.com.example.designpatterns.chp6_command;
+package main.java.com.example.designpatterns.chp6_command.home_appliances;
 
 public class GarageDoor {
     public void open() {

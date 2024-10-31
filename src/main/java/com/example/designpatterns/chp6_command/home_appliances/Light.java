@@ -16,6 +16,6 @@ public class Light {
     }
 
     public void off() {
-        System.out.println(name + "Light is off");
+        System.out.println(name + " Light is off");
     }
 }

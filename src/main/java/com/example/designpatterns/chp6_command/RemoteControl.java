@@ -27,12 +27,12 @@ public class RemoteControl {
 
     public void onButtonWasPressed(int slot) {
         onCommands[slot].execute();
-        setUndoCommand(onCommands[slot]);
+        this.undoCommand = onCommands[slot];
     }
 
     public void offButtonWasPressed(int slot) {
         offCommands[slot].execute();
-        setUndoCommand(offCommands[slot]);
+        this.undoCommand = offCommands[slot];
     }
 
     public void undoButtonWasPressed() {
@@ -53,9 +53,5 @@ public class RemoteControl {
         }
 
         return stringBuilder.toString();
-    }
-
-    private void setUndoCommand(Command undoCommand) {
-        this.undoCommand = undoCommand;
     }
 }

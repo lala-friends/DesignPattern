@@ -1,9 +1,9 @@
 package test.java.com.example.designpatterns.chp7_adapter_and_facade;
 
-import main.java.com.example.designpatterns.chp7_adapter_and_facade.DuckAdapter;
-import main.java.com.example.designpatterns.chp7_adapter_and_facade.MallardDuck;
-import main.java.com.example.designpatterns.chp7_adapter_and_facade.TurkeyAdapter;
-import main.java.com.example.designpatterns.chp7_adapter_and_facade.WildTurkey;
+import main.java.com.example.designpatterns.chp7_adapter_and_facade.simple_adapter.DuckAdapter;
+import main.java.com.example.designpatterns.chp7_adapter_and_facade.simple_adapter.MallardDuck;
+import main.java.com.example.designpatterns.chp7_adapter_and_facade.simple_adapter.TurkeyAdapter;
+import main.java.com.example.designpatterns.chp7_adapter_and_facade.simple_adapter.WildTurkey;
 import org.junit.jupiter.api.Test;
 
 public class AdapterTest {

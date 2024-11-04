@@ -1,6 +1,8 @@
 package main.java.com.example.designpatterns.chp9_iterator_and_composite;
 
-public class DinnerMenu {
+import java.util.Iterator;
+
+public class DinnerMenu implements Menu {
     private static final int MAX_ITEMS = 6;
     private final MenuItem[] menuItems;
     private int numberOfItems = 0;

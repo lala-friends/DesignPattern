@@ -1,9 +1,10 @@
 package main.java.com.example.designpatterns.chp9_iterator_and_composite;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
-public class PancakeHouseMenu {
+public class PancakeHouseMenu implements Menu {
     private final List<MenuItem> menuItems;
 
     public PancakeHouseMenu() {
@@ -23,6 +24,6 @@ public class PancakeHouseMenu {
     }
 
     public Iterator createIterator() {
-        return new PancakeMenuIterator(menuItems);
+        return menuItems.iterator();
     }
 }

@@ -4,11 +4,11 @@ import java.util.Iterator;
 import java.util.Objects;
 
 public class Waitress {
-    private final PancakeHouseMenu pancakeHouseMenu;
-    private final DinnerMenu dinnerMenu;
+    private final Menu pancakeHouseMenu;
+    private final Menu dinnerMenu;
 
-    public Waitress(final PancakeHouseMenu pancakeHouseMenu,
-                    final DinnerMenu dinnerMenu) {
+    public Waitress(final Menu pancakeHouseMenu,
+                    final Menu dinnerMenu) {
         this.pancakeHouseMenu = Objects.requireNonNull(pancakeHouseMenu);
         this.dinnerMenu = Objects.requireNonNull(dinnerMenu);
     }

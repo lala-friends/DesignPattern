@@ -1,8 +1,9 @@
 package main.java.com.example.designpatterns.chp9_iterator_and_composite;
 
 import java.util.HashMap;
+import java.util.Iterator;
 
-public class CafeMenu {
+public class CafeMenu implements Menu {
     private final HashMap<String, MenuItem> menuItems;
 
     public CafeMenu() {
@@ -18,7 +19,8 @@ public class CafeMenu {
         menuItems.put(menuItem.getName(), menuItem);
     }
 
-    public HashMap<String, MenuItem> getMenuItems() {
-        return menuItems;
+    @Override
+    public Iterator createIterator() {
+        return menuItems.values().iterator();
     }
 }

@@ -1,4 +1,4 @@
-package main.java.com.example.designpatterns.chp9_iterator_and_composite;
+package main.java.com.example.designpatterns.chp9_iterator_and_composite.iterator;
 
 public class MenuItem {
     private final String name;

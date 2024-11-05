@@ -1,9 +1,9 @@
 package test.java.com.example.designpatterns.chp9_iterator_and_composite;
 
-import main.java.com.example.designpatterns.chp9_iterator_and_composite.CafeMenu;
-import main.java.com.example.designpatterns.chp9_iterator_and_composite.DinnerMenu;
-import main.java.com.example.designpatterns.chp9_iterator_and_composite.PancakeHouseMenu;
-import main.java.com.example.designpatterns.chp9_iterator_and_composite.Waitress;
+import main.java.com.example.designpatterns.chp9_iterator_and_composite.iterator.CafeMenu;
+import main.java.com.example.designpatterns.chp9_iterator_and_composite.iterator.DinnerMenu;
+import main.java.com.example.designpatterns.chp9_iterator_and_composite.iterator.PancakeHouseMenu;
+import main.java.com.example.designpatterns.chp9_iterator_and_composite.iterator.Waitress;
 import org.junit.jupiter.api.Test;
 
 public class IteratorTest {

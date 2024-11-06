@@ -3,7 +3,7 @@ package test.java.com.example.designpatterns.chp10_state_pattern;
 import main.java.com.example.designpatterns.chp10_state_pattern.before.GumballMachine;
 import org.junit.jupiter.api.Test;
 
-public class StateTest {
+public class BeforeStateTest {
     @Test
     public void testGumballMachine() {
         final var gumballMachine = new GumballMachine(5);

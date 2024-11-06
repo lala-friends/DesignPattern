@@ -43,6 +43,10 @@ public class GumballMachine {
         this.state = state;
     }
 
+    public void setCount(int count) {
+        this.count = count;
+    }
+
     void releaseBoll() {
         System.out.println("알맹이가 나가고 있습니다.");
         if (count != 0) {

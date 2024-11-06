@@ -37,6 +37,11 @@ public class SoldState implements State {
     }
 
     @Override
+    public void refill(final int count) {
+        System.out.println("리필할 수 없는 상태입니다.");
+    }
+
+    @Override
     public String toString() {
         return "알맹이 판매중";
     }

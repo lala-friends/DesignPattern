@@ -1,12 +1,15 @@
 package main.java.com.example.designpatterns.chp10_state_pattern.state;
 
 import java.util.Objects;
+import java.util.Random;
 
 public class HasQuarterState implements State {
     private final GumballMachine gumballMachine;
+    private final Random randomWinner;
 
     public HasQuarterState(final GumballMachine gumballMachine) {
         this.gumballMachine = Objects.requireNonNull(gumballMachine);
+        randomWinner = new Random(System.currentTimeMillis());
     }
 
     @Override
@@ -23,7 +26,14 @@ public class HasQuarterState implements State {
     @Override
     public void turnCrank() {
         System.out.println("손잡이를 돌리셨습니다.");
-        gumballMachine.setState(gumballMachine.getSoldState());
+
+        final var winner = randomWinner.nextInt(10);
+
+        if (winner == 0 && gumballMachine.getCount() > 1) {
+            gumballMachine.setState(gumballMachine.getWinnerState());
+        } else {
+            gumballMachine.setState(gumballMachine.getSoldState());
+        }
     }
 
     @Override

@@ -67,4 +67,16 @@ public class GumballMachine {
     public int getCount() {
         return count;
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder stringBuilder = new StringBuilder();
+
+        stringBuilder.append("\n주식화사 왕뽑기\n");
+        stringBuilder.append("자바로 돌아가는 2004년형 뽑기 기계\n");
+        stringBuilder.append("남은 개수:").append(count).append("개\n");
+        stringBuilder.append(state.toString()).append("\n");
+
+        return stringBuilder.toString();
+    }
 }

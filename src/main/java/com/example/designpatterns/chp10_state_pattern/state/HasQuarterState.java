@@ -30,4 +30,9 @@ public class HasQuarterState implements State {
     public void dispense() {
         System.out.println("알맹이가 나갈 수 없습니다.");
     }
+
+    @Override
+    public String toString() {
+        return "동전 있음";
+    }
 }

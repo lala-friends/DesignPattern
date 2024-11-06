@@ -29,4 +29,9 @@ public class NoQuarterState implements State {
     public void dispense() {
         System.out.println("동전으르 넣어주세요.");
     }
+
+    @Override
+    public String toString() {
+        return "동전 투입 대기중";
+    }
 }

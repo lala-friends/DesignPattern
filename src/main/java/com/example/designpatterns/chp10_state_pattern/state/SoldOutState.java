@@ -28,4 +28,9 @@ public class SoldOutState implements State {
     public void dispense() {
         System.out.println("알맹이가 나갈 수 없습니다.");
     }
+
+    @Override
+    public String toString() {
+        return "매진";
+    }
 }

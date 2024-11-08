@@ -1,4 +1,4 @@
-package main.java.com.example.designpatterns.chp11_proxy;
+package main.java.com.example.designpatterns.chp11_proxy.remote;
 
 import java.util.Objects;
 

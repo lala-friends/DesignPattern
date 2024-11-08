@@ -1,4 +1,4 @@
-package main.java.com.example.designpatterns.chp11_proxy;
+package main.java.com.example.designpatterns.chp11_proxy.remote;
 
 public class GumballMachineTestDrive {
     public static void main(String[] args) {

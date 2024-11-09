@@ -1,6 +1,9 @@
 package main.java.com.example.designpatterns.chp11_proxy.remote;
 
-public class GumballMachine {
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
+
+public class GumballMachine extends UnicastRemoteObject implements GumballMachineRemote {
     private final State noQuarterState;
     private final State hasQuarterState;
     private final State soldState;
@@ -11,7 +14,7 @@ public class GumballMachine {
     private int count;
     private State state;
 
-    public GumballMachine(final String location, final int count) {
+    public GumballMachine(final String location, final int count) throws RemoteException {
         noQuarterState = new NoQuarterState(this);
         hasQuarterState = new HasQuarterState(this);
         soldState = new SoldState(this);

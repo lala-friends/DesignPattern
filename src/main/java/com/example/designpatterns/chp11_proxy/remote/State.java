@@ -1,6 +1,8 @@
 package main.java.com.example.designpatterns.chp11_proxy.remote;
 
-public interface State {
+import java.io.Serializable;
+
+public interface State extends Serializable {
     void insertQuarter();
 
     void ejectQuarter();

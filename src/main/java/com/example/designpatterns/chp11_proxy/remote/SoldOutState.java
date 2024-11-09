@@ -4,7 +4,7 @@ package main.java.com.example.designpatterns.chp11_proxy.remote;
 import java.util.Objects;
 
 public class SoldOutState implements State {
-    private final GumballMachine gumballMachine;
+    private final transient GumballMachine gumballMachine;
 
     public SoldOutState(final GumballMachine gumballMachine) {
         this.gumballMachine = Objects.requireNonNull(gumballMachine);

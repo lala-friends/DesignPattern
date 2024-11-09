@@ -4,8 +4,8 @@ import java.util.Objects;
 import java.util.Random;
 
 public class HasQuarterState implements State {
-    private final GumballMachine gumballMachine;
-    private final Random randomWinner;
+    private final transient GumballMachine gumballMachine;
+    private final transient Random randomWinner;
 
     public HasQuarterState(final GumballMachine gumballMachine) {
         this.gumballMachine = Objects.requireNonNull(gumballMachine);

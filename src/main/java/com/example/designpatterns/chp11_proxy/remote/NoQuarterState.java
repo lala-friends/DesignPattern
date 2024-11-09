@@ -3,7 +3,7 @@ package main.java.com.example.designpatterns.chp11_proxy.remote;
 import java.util.Objects;
 
 public class NoQuarterState implements State {
-    private final GumballMachine gumballMachine;
+    private final transient GumballMachine gumballMachine;
 
     public NoQuarterState(final GumballMachine gumballMachine) {
         this.gumballMachine = Objects.requireNonNull(gumballMachine);

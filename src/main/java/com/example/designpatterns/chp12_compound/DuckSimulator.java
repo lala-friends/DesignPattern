@@ -32,13 +32,11 @@ public class DuckSimulator {
 
         flocksOfDucks.add(flockOfMallard);
 
+        final var quackologist = new QuackoLogist();
+        flocksOfDucks.registerObserver(quackologist);
+
         System.out.println("\nDuck Simulator: Whole Flock Simulation\n");
         simulate(flocksOfDucks);
-
-        System.out.println("\nDuck Simulator: Mallard Flock Simulation\n");
-        simulate(flockOfMallard);
-
-        System.out.println("\nThe ducks quacked " + QuackCounter.getQuacks() + " times");
     }
 
     void simulate(final Quackable duck) {

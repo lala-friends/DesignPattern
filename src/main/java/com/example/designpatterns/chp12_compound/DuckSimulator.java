@@ -3,15 +3,16 @@ package main.java.com.example.designpatterns.chp12_compound;
 public class DuckSimulator {
     public static void main(String[] args) {
         final var simulator = new DuckSimulator();
-        simulator.simulate();
+        final var duckFactory = new CountingDuckFactory();
+        simulator.simulate(duckFactory);
     }
 
-    void simulate() {
-        final var mallardDuck = new QuackCounter(new MallardDuck());
-        final var redheadDuck = new QuackCounter(new RedheadDuck());
-        final var duckCall = new QuackCounter(new DuckCall());
-        final var rubberDuck = new QuackCounter(new RubberDuck());
-        final var gooseDuck = new QuackCounter(new GooseAdapter(new Goose()));
+    void simulate(final AbstractDuckFactory duckFactory) {
+        final var mallardDuck = duckFactory.createMallardDuck();
+        final var redheadDuck = duckFactory.createRedheadDuck();
+        final var duckCall = duckFactory.createDuckCall();
+        final var rubberDuck = duckFactory.createRubberDuck();
+        final var gooseDuck = new GooseAdapter(new Goose());
 
         System.out.println("\nDuck Simulator\n");
 

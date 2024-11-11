@@ -7,11 +7,11 @@ public class DuckSimulator {
     }
 
     void simulate() {
-        final var mallardDuck = new MallardDuck();
-        final var redheadDuck = new RedheadDuck();
-        final var duckCall = new DuckCall();
-        final var rubberDuck = new RubberDuck();
-        final var gooseDuck = new GooseAdapter(new Goose());
+        final var mallardDuck = new QuackCounter(new MallardDuck());
+        final var redheadDuck = new QuackCounter(new RedheadDuck());
+        final var duckCall = new QuackCounter(new DuckCall());
+        final var rubberDuck = new QuackCounter(new RubberDuck());
+        final var gooseDuck = new QuackCounter(new GooseAdapter(new Goose()));
 
         System.out.println("\nDuck Simulator\n");
 
@@ -20,6 +20,8 @@ public class DuckSimulator {
         simulate(duckCall);
         simulate(rubberDuck);
         simulate(gooseDuck);
+
+        System.out.println("\nThe ducks quacked " + QuackCounter.getQuacks() + " times");
     }
 
     void simulate(final Quackable duck) {

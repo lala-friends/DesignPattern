@@ -11,6 +11,7 @@ public class DuckSimulator {
         final var redheadDuck = new RedheadDuck();
         final var duckCall = new DuckCall();
         final var rubberDuck = new RubberDuck();
+        final var gooseDuck = new GooseAdapter(new Goose());
 
         System.out.println("\nDuck Simulator\n");
 
@@ -18,6 +19,7 @@ public class DuckSimulator {
         simulate(redheadDuck);
         simulate(duckCall);
         simulate(rubberDuck);
+        simulate(gooseDuck);
     }
 
     void simulate(final Quackable duck) {

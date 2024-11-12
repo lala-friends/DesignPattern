@@ -1,15 +1,19 @@
-package main.java.com.example.designpatterns.chp12_compound;
+package main.java.com.example.designpatterns.chp12_compound.duck;
 
-public class RedheadDuck implements Quackable {
+import java.util.Objects;
+
+public class GooseAdapter implements Quackable {
+    private final Goose goose;
     private final Observable observable;
 
-    public RedheadDuck() {
+    public GooseAdapter(final Goose goose) {
+        this.goose = Objects.requireNonNull(goose);
         this.observable = new Observable(this);
     }
 
     @Override
     public void quack() {
-        System.out.println("Quack");
+        goose.honk();
         notifyObservers();
     }
 
@@ -25,6 +29,6 @@ public class RedheadDuck implements Quackable {
 
     @Override
     public String toString() {
-        return getClass().getSimpleName();
+        return goose.toString();
     }
 }

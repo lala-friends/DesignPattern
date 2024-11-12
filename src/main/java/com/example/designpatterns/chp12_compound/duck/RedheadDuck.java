@@ -1,15 +1,15 @@
-package main.java.com.example.designpatterns.chp12_compound;
+package main.java.com.example.designpatterns.chp12_compound.duck;
 
-public class DuckCall implements Quackable {
+public class RedheadDuck implements Quackable {
     private final Observable observable;
 
-    public DuckCall() {
+    public RedheadDuck() {
         this.observable = new Observable(this);
     }
 
     @Override
     public void quack() {
-        System.out.println("Kwak");
+        System.out.println("Quack");
         notifyObservers();
     }
 

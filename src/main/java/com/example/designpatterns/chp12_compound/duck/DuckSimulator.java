@@ -1,4 +1,4 @@
-package main.java.com.example.designpatterns.chp12_compound;
+package main.java.com.example.designpatterns.chp12_compound.duck;
 
 public class DuckSimulator {
     public static void main(String[] args) {
